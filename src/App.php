@@ -13,7 +13,6 @@ Class App {
 
         $maxX = $data[0];
         $maxY = $data[1];
-        var_dump($data);
 
         $roversArr = [];
         for($i=2;$i<count($data);$i+=4){
@@ -27,9 +26,7 @@ Class App {
 
         $rovers = [];
         foreach ($roversArr as $item){
-            echo "</br> set  ".$inputParser->parseDisplacement($item[2])."    </br>";
-            $rover = new Rover(new Position($item[0],$item[1],0,$inputParser->parseDisplacement(intval($item[2])),$maxX,$maxY,0,0,0,0));
-            echo "  get ".$rover->position->getDisplace()."</br>";
+            $rover = new Rover(new Position($item[0],$item[1],0,$inputParser->parseDisplacement($item[2]),$maxX,$maxY,0,0,0,0));
             array_push($rovers,$rover);
         }
 

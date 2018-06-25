@@ -3,8 +3,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $app = new App\App("5 5 
 1 2 N 
-LMLMLMLMM 
+LMLMLMLMMG 
 3 3 E 
-MMRMMRMRRM");
+MMRMMRMRRMG");
 
 ?>
