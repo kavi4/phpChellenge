@@ -10,6 +10,7 @@ class InputParser{
     }
 
     public function parseCommands($string,$element){
+        if(!is_subclass_of ($element,ILocationElement::class) ){throw new \Exception("element should implement ILocation Element!");}
         $commands = [];
         for($i=0;$i<strlen($string);$i++){
             $command = $this->commandGenerator->getCommand($string[$i],$element);
@@ -35,6 +36,7 @@ class InputParser{
                 return 270;
             }
         }
+        throw new \Exception("This displace not exist!");
     }
 }
 ?>

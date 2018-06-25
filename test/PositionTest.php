@@ -2,6 +2,7 @@
 namespace  Test;
 use App\Position;
 use PHPUnit;
+use Prophecy\Exception\InvalidArgumentException;
 
 class PositionTest extends PHPUnit\Framework\TestCase {
 
@@ -30,6 +31,14 @@ class PositionTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals($pos->getMaxX(),20);
         $this->assertEquals($pos->getMaxY(),20);
         $this->assertEquals($pos->getMaxZ(),20);
+
+    }
+
+    public function testException(){
+        $pos = new Position();
+        $this->expectException(InvalidArgumentException::class);
+
+        $pos->setX("werg");
 
     }
 

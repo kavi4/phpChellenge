@@ -2,7 +2,7 @@
 namespace App;
 
 interface ICommandGenerator{
-    public function getCommand($strin,$element);
+    public function getCommand($string,$element);
 }
 
 ?>
